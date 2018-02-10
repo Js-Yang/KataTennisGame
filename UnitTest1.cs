@@ -12,6 +12,14 @@ namespace KataTennisGame
             var score = tennisGame.GetScore();
             Assert.AreEqual("Love All", score);
         }
+
+        [Test]
+        public void FiteenLove()
+        {
+            var tennisGame = new tennisGame();
+            var score = tennisGame.GetScore();
+            Assert.AreEqual("Fiteen Love", score);
+        }
     }
 
     public class tennisGame
