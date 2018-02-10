@@ -5,40 +5,51 @@ namespace KataTennisGame
 {
     public class Class1
     {
-        [Test]
-        public void LoveAll()
+        private TennisGame _tennisGame;
+
+        [SetUp]
+        public void Setup()
         {
-            var tennisGame = new TennisGame();
-            var score = tennisGame.GetScore();
-            Assert.AreEqual("Love All", score);
+            _tennisGame = new TennisGame();
         }
 
         [Test]
-        public void FiteenLove()
+        public void LoveAll()
         {
-            var tennisGame = new TennisGame();
-            tennisGame.FirstPlayerGotScore();
-            var score = tennisGame.GetScore();
-            Assert.AreEqual("Fiteen Love", score);
+            var expectedScore = "Love All";
+            ScoreShouldBe(expectedScore);
+        }
+
+        private void ScoreShouldBe(string expectedScore)
+        {
+            Assert.AreEqual(expectedScore, _tennisGame.GetScore());
+        }
+
+        [Test]
+        public void FifteenLove()
+        {
+            _tennisGame.FirstPlayerGotScore();
+            Assert.AreEqual("Fifteen Love", _tennisGame.GetScore());
         }
     }
 
     public class TennisGame
     {
-        private int _player1Score;
+        private int _firstPlayerScore;
 
         public string GetScore()
         {
-            if (_player1Score == 1)
+            if (_firstPlayerScore == 1)
             {
-                return "Fiteen Love";
+                return "Fifteen Love";
             }
+
             return "Love All";
         }
 
         public void FirstPlayerGotScore()
         {
-            _player1Score++;
+            _firstPlayerScore++;
         }
     }
 }
