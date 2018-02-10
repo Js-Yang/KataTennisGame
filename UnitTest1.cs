@@ -29,6 +29,10 @@ namespace KataTennisGame
 
         public string GetScore()
         {
+            if (_player1Score == 1)
+            {
+                return "Fiteen Love";
+            }
             return "Love All";
         }
 
