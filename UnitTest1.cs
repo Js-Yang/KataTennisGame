@@ -1,5 +1,4 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using NUnit.Framework.Internal;
 
 namespace KataTennisGame
@@ -19,7 +18,7 @@ namespace KataTennisGame
     {
         public string GetScore()
         {
-            throw new NotImplementedException();
+            return "Love All";
         }
     }
 }
