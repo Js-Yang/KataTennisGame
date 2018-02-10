@@ -3,7 +3,7 @@ using NUnit.Framework.Internal;
 
 namespace KataTennisGame
 {
-    public class Class1
+    public class TennisGameTest
     {
         private TennisGame _tennisGame;
 
@@ -30,26 +30,6 @@ namespace KataTennisGame
         {
             _tennisGame.FirstPlayerGotScore();
             Assert.AreEqual("Fifteen Love", _tennisGame.GetScore());
-        }
-    }
-
-    public class TennisGame
-    {
-        private int _firstPlayerScore;
-
-        public string GetScore()
-        {
-            if (_firstPlayerScore == 1)
-            {
-                return "Fifteen Love";
-            }
-
-            return "Love All";
-        }
-
-        public void FirstPlayerGotScore()
-        {
-            _firstPlayerScore++;
         }
     }
 }
