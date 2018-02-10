@@ -1,14 +1,25 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
+using NUnit.Framework.Internal;
 
 namespace KataTennisGame
 {
-    [TestClass]
-    public class UnitTest1
+    public class Class1
     {
-        [TestMethod]
-        public void TestMethod1()
+        [Test]
+        public void LoveAll()
         {
+            var tennisGame = new tennisGame();
+            var score = tennisGame.GetScore();
+            Assert.AreEqual("Love All", score);
+        }
+    }
+
+    public class tennisGame
+    {
+        public string GetScore()
+        {
+            throw new NotImplementedException();
         }
     }
 }
